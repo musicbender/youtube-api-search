@@ -24,10 +24,8 @@ $(document).ready(function(){
     function showResults(results) {
         var html = "";
         $.each(results, function(index, value){
-            html += '<li class="item">' + value.snippet.title + '</li>';
+            html += '<li class="item"><img class="item-thumbnail" src="' + value.snippet.thumbnails.default.url + '"><h3 class="item-title">' + value.snippet.title + '</h3><p>' + value.snippet.description + '</p></li>';
             $('.results').html(html);
-            
         });
     }
-    
 });

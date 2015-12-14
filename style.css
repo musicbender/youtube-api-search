@@ -52,6 +52,7 @@ h1 {
     font-size: 2em;
     border: none;
     background-color: white;
+    pointer-events: none;
 }
     
 .btn-container:hover {
@@ -89,8 +90,14 @@ h1 {
     border-bottom: 4px solid white;
 }
 
+a {
+    text-decoration: none;
+    color: white;
+}
+
 .item-title {
     margin: 30px 5px 5px 5px;
+    color: white;
 }
 
 .item-description {

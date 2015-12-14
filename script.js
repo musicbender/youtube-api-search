@@ -10,13 +10,14 @@ $(document).ready(function(){
         var params = {
             part: "snippet",
             key: 'AIzaSyDwbooupkorSaCDsUHfwnnMQlLZDhNRyzM',	
-            q: searchTerm
+            q: searchTerm,
+            maxResults: 6
         }
         
         var url = 'https://www.googleapis.com/youtube/v3/search';
         
         $.getJSON(url, params, function(data){
-            console.log(data.items);
+            console.log(data);
             showResults(data.items);
         });
     }
@@ -24,7 +25,7 @@ $(document).ready(function(){
     function showResults(results) {
         var html = "";
         $.each(results, function(index, value){
-            html += '<li class="item"><img class="item-thumbnail" src="' + value.snippet.thumbnails.default.url + '"><h3 class="item-title">' + value.snippet.title + '</h3><p class="item-description">' + value.snippet.description + '</p></li>';
+            html += '<li class="item"><img class="item-thumbnail" src="' + value.snippet.thumbnails.default.url + '"><h3 class="item-title">' + value.snippet.title + '</h3></li>';
             $('.results').html(html);
         });
     }
